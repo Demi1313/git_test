@@ -1,167 +1,104 @@
 "use strict";
 
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+let num = 20;
 
-const personalMovieDb = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+function showFirstMessage(text) {
+    console.log(text);
+    let num = 10;
+    console.log(num);
+}
+
+showFirstMessage('hello world');
+console.log(num);
+
+function calc (a,b) {
+    return (a + b);
+}
+
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6));
+
+function ret() {
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function() {
+    console.log('hello');
 };
+logger();
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('один из последних просмотренных фильмов', ''),
-          b = prompt('оцените фильм', '');
+const calc = (a, b) => a + b;
 
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDb.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
+
+
+const usdCurr = 28;
+const eurCurr = 32;
+const discount = 0.9;
+
+function convert(amount, curr) {
+    return curr * amount;
+}
+
+function promotion(result) {
+    console.log(result * discount);
+}
+convert(500, usdCurr);
+
+const res = convert(500, eurCurr);
+promotion(res);
+
+
+
+function test() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+        if (i === 3) return
     }
+    console.log('done');
 }
-// let i = 0;
-// do {
-//     i++;
-//     const a = prompt('один из последних просмотренных фильмов', ''),
-//           b = prompt('оцените фильм', '');
-          
-//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-//         personalMovieDb.movies[a] = b;
-//         console.log('done');
-//     } else {
-//         console.log('error');
-//         i--;
-//     }
-// } while (i < 2);
+
+test();
+
+function doNothing() {};
+console.log(doNothing() === undefined);
 
 
-if (personalMovieDb.count < 10) {
-    console.log('просмотрено мало фильмов');
-} else if (personalMovieDb.count >= 10 && personalMovieDb.count < 30) {
-    console.log('вы классный зритель');
-} else if (personalMovieDb.count >= 30) {
-    console.log('вы киноман');
-} else {
-    console.log('произошла ошибка')
+
+function sayHello(name) {
+    console.log(`Привет, ${name}`);
+    return (`Привет, ${name}`);
 }
-console.log(personalMovieDb);
+sayHello('Олег');
 
 
+function returnNeighboringNumbers(num) {
+    console.log([num - 1 , num, num + 1]);
+    return ([num - 1 , num, num + 1]);
+}
+returnNeighboringNumbers(5);
 
 
-// if (4 == 9) {
-//     console.log('OK!');
-// } else {
-//     console.log('error!');
-// }
+function getMathResult(num, times) {
+    if (typeof(times) !== 'number' || times <= 0) {
+        return num;
+    }
 
-// const num = 50;
+    let str = '';
 
-// if (num < 49) {
-//     console.log('error');
-// } else if (num > 100) {
-//     console.log('много');
-// } else {
-//     console.log("ok!");
-// }
-
-// (num === 50) ? console.log('ok!') : console.log('error');
-
-
-
-// const num = 50;
-
-// switch (num) {
-//     case 49:
-//         console.log('неверно');
-//         break;
-//     case 100:
-//         console.log('неверно');
-//         break;
-//     case 50:
-//         console.log('верно');
-//         break;
-//     default:
-//         console.log('не в этот раз');
-//         break;
-// }
-
-// const hamburger = 3;
-// const fries = 1;
-// const cola = 1;
-
-// console.log(hamburger === 3 && fries && cola);
-
-// if (hamburger === 3 && fries && cola) {
-//     console.log('я сыт');
-// } else {
-//     console.log('я голоден');
-// }
-
-
-// let result = '';
-// const length = 7;
-
-// for (let i = 1; i < length; i++) {
-//     for (let j = 0; j < length - i; j++) {
-//         result += ' ';
-//     }
-//     for (let j = 0; j < 2 * i - 1; j++) {
-//         result += '*';
-//     }
-//     result += '\n';
-// }
-
-// console.log(result);
-
-// first: for (let i = 1; i < 3; i++) {
-//     console.log(`First level: ${i}`);
-//     for (let j = 0; j < 3; j++) {
-//         console.log(`Second level: ${j}`);
-//         for (let k = 0; k < 3; k++) {
-//             if (k===2) continue first;
-//             console.log(`Thirt level: ${k}`);
-//         }
-//     }
-    
-// }
-// for (let i = 5; i < 11; i++) {
-//     console.log(i);
-// }
-
-// for (let i = 20; i >= 10; i--) {
-//     console.log(i);
-//     if (i===13) break;
-// }
-
-// for (let i=2; i < 11; i++ + i++) {
-//     console.log(i);
-// }
-
-
-// let i = 2;
-// do {
-//     i++;
-//     if (i % 2 === 0) {
-//         continue
-//     };
-//     console.log(i);
-// } while (i <= 15);
-
-
-// let arrayOfNumbers = [];
-
-// for (let i = 5; i < 11; i++) {
-//     arrayOfNumbers[i - 5] = i;
-// }
-// console.log(arrayOfNumbers);
-// return arrayOfNumbers;
-
-
-
-
-
+    for (let i = 1; i <= times; i++) {
+        if (i === times) {
+            str += `${num * i}`;
+        } else {
+            str += `${num * i}---`;
+        }
+    }
+    console.log(str);
+    return str;
+}
+getMathResult(100, 5);
 
